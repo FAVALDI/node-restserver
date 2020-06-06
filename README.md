@@ -14,18 +14,34 @@ The information able to save is:
   -  tecnologias_conocidas
   -  link_github
 
+## APP CONFIGURATION
 
-});
+This app has been made using **node.js, mongoDB ATLAS and DOCKER**, and deployed by HEROKU. 
 
+It´s been divided in:
+- Main file (server.js) which manage the system,
+- Config file to configure ports usage,
+- Models file to create a schema for our database,
+- Routes file to manage the REST requests.
 
-    ### It is a single development which satisfies the need for the following packages:
+In addition, the app was develop using the following NPM dependencies:
+
+        "bcrypt": "^4.0.1",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.18",
+        "mongoose-unique-validator": "^2.0.3",
+        "underscore": "^1.10.2"
+
+**This app have errors management and validation for the information that we push to the database.**
+
+### It is a single development which satisfies the need for the following packages:
 
  - **mongoose** => To establish a connection to our MongoDB ATLAS and producing mongoose model.
  - **bcryptjs** => To hash the passwords.
  - **underscore** => To allow the user to update specific fields only.
 
- **It also uses a dockerfile for the project)**
-
+ **It also uses a dockerfile for the project**
 
  -------------
 
@@ -101,9 +117,11 @@ You can find an id valid from using the GET request, take it and remplace it in 
 
 Using a terminal you can run the app by executing the following command:
 
-docker run -it -p <PORT>:3000 -it avalith-test
+1. docker pull favaldi/avalith-test:latest
 
-Remplace **"<PORT>"** with the port number that you want to use with the application.
+2. Remplace in the following command **"<PORT>"** with the port number that you want to use with the application.
+
+ docker run -it -p <PORT>:3000 -it favaldi/avalith-test
 
 
 ### Test GET request
@@ -157,22 +175,4 @@ You can find an id valid from using the GET request, take it and remplace it in 
 4. To confirm it, use the GET request again and check for it person.
 
 
-## APP CONFIGURATION
-
-This app has been made using **node.js, mongoDB ATLAS and DOCKER**, and deployed by HEROKU. 
-
-It´s been divided in:
-- Main file (server.js) which manage the system,
-- Config file to configure ports usage,
-- Models file to create a schema for our database,
-- Routes file to manage the REST requests.
-
-In addition, the app was develop using the following NPM dependencies:
-
-        "bcrypt": "^4.0.1",
-        "body-parser": "^1.19.0",
-        "express": "^4.17.1",
-        "mongoose": "^5.9.18",
-        "mongoose-unique-validator": "^2.0.3",
-        "underscore": "^1.10.2"
 
