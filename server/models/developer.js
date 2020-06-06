@@ -1,56 +1,47 @@
+//=====================================================//
+//                  MONGOOSE SCHEMA                    //
+//=====================================================//
+
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
-
 let Schema = mongoose.Schema;
-
-let enableRoles = {
-
-        values: ['ADMIN_ROLE', 'USER_ROLE'],
-        message: '{VALUE} is not a valid role'
-    } // list which contains the allowed roles
-
-
 let usuarioSchema = new Schema({
-    //creamos las propiedades de la base de datos
+    //shows schema parameters
     nombre: {
         type: String,
-        requiered: [true, 'El nombre es necesario']
+        required: [true, 'El nombre completo es necesario,']
     },
 
     email: {
 
         type: String,
-        unique: true, //esto nos comprueba que en la base de datos no exista otra persona con ese correo
-        required: [true, 'El correo es necesario']
+        unique: true, //check for unique user
+        required: [true, 'El correo electronico es obligatorio.']
     },
     password: {
         type: String,
-        required: [true, 'La contraseña es obligatoria']
+        required: [true, 'La contraseña es obligatoria.']
     },
-    img: {
+
+    tecnologias_conocidas: {
         type: String,
-        required: [false, 'La imagen no es necesaria']
-    }, //no es obligatorio
-    role: {
-        type: String,
-        default: 'USER_ROLE',
-        //it validates that role meet our list
-        enum: enableRoles
-    }, // default : 'USER_ROLE'
+        required: [true, 'Las tecnologias son obligatorias.']
+
+    },
     estado: {
         type: Boolean,
         default: true
     }, //boolean
-    google: {
-        type: Boolean,
-        default: false
-    } //boolean
+    link_github: {
+        type: String,
+        required: [true, 'El link de github es olbigatorio.']
+    }
 
 
 });
 
-//ethe tojson ethod always is call whn you wanna print
+//the tojson method always is called when you get list
 usuarioSchema.methods.toJSON = function() {
 
     let user = this;
