@@ -58,7 +58,7 @@ In addition, the app was develop using the following NPM dependencies:
 Before you go forward check that docker desktop is running.
 
  -------------
- 
+
 # Usage
 
 ## Testing by deployment in HEROKU
@@ -76,7 +76,7 @@ Before you go forward check that docker desktop is running.
 The password is not shown because it is a personal register, and also it is encrypted.
 4. If you want to list the data with a limit of persons to show (**X**) and with a starting point for the list (**Y**) use the following URL syntax:
  
- https://avalith-test-fabian-naula.herokuapp.com/developers?limite=**X**&from=**Y**
+ https://avalith-test-fabian-naula.herokuapp.com/developers?limite=X&from=Y
 
 ### Test POST request
 
@@ -93,7 +93,7 @@ The password is not shown because it is a personal register, and also it is encr
 ### Test PUT request
 
 1. Open POSTMAN
-2. configure a PUT request using a URL: https://avalith-test-fabian-naula.herokuapp.com/**{id}**
+2. configure a PUT request using a URL: https://avalith-test-fabian-naula.herokuapp.com/{id}
 You can find an id valid from using the GET request, take it and remplace it in **{id}** URL.
 3. You could send the following parameters from body (as x-www-form-urlencoded) to be updated:
 
@@ -108,7 +108,7 @@ As a confirmation you will receive an "ok":true followed by the sent information
 ### Test DELETE request
 
 1. Open POSTMAN
-2. configure a DELETE request using a URL: https://avalith-test-fabian-naula.herokuapp.com/**{id}**
+2. configure a DELETE request using a URL: https://avalith-test-fabian-naula.herokuapp.com/{id}
 You can find an id valid from using the GET request, take it and remplace it in **{id}** URL.
 3. Send the request and the person with the id will be deleted.
 4. To confirm it, use the GET request again and check for it person.
@@ -121,15 +121,15 @@ Using a terminal you can run the app by executing the following command:
 
 1. docker pull favaldi/avalith-test:latest
 
-2. Remplace in the following command **"PORT"** with the port number that you want to use with the application.
+2. Remplace in the following command **PORT** with the port number that you want to use with the application.
 
- docker run -it -p **PORT**:3000 -it favaldi/avalith-test
+ docker run -it -p PORT:3000 -it favaldi/avalith-test
 
 
 ### Test GET request
 
 1. Open POSTMAN
-2. configure a GET request using a URL: https://localhost:**PORT**/developers
+2. configure a GET request using a URL: https://localhost:PORT/developers
 3. It will list the data of the existing developers with the next information
     -  nombre
     -  email
@@ -139,7 +139,7 @@ Using a terminal you can run the app by executing the following command:
 The password is not shown because it is a personal register, and also it is encrypted.
 4. If you want to list the data with a limit of persons to show (**X**) and with a starting point for the list (**Y**) use the following URL syntax:
  
- https://localhost:**PORT**/developers?limite=**X**&from=**Y**
+ https://localhost:PORT/developers?limite=X&from=Y
 
 ### Test POST request
 
@@ -156,7 +156,7 @@ The password is not shown because it is a personal register, and also it is encr
 ### Test PUT request
 
 1. Open POSTMAN
-2. configure a PUT request using a URL: https://localhost:**PORT**/**{id}**
+2. configure a PUT request using a URL: https://localhost:PORT/{id}
 You can find an id valid from using the GET request, take it and remplace it in **{id}** URL.
 3. You could send the following parameters from body (as x-www-form-urlencoded) to be updated:
 
@@ -171,7 +171,7 @@ As a confirmation you will receive an "ok":true followed by the sent information
 ### Test DELETE request
 
 1. Open POSTMAN
-2. configure a DELETE request using a URL: https://localhost:**PORT**/**{id}**
+2. configure a DELETE request using a URL: https://localhost:PORT/{id}
 You can find an id valid from using the GET request, take it and remplace it in **{id}** URL.
 3. Send the request and the person with the id will be deleted.
 4. To confirm it, use the GET request again and check for it person.
